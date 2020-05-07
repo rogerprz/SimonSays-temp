@@ -152,6 +152,10 @@
                         <outletCollection property="colorButtons" destination="HQX-MZ-LlB" collectionClass="NSMutableArray" id="Y2k-za-W9o"/>
                         <outletCollection property="colorButtons" destination="6WL-kW-J1A" collectionClass="NSMutableArray" id="ESo-hF-w2C"/>
                         <outletCollection property="colorButtons" destination="84u-FT-ZFj" collectionClass="NSMutableArray" id="UYX-t4-tqx"/>
+                        <outletCollection property="playerLabels" destination="fWk-Mz-Mk3" collectionClass="NSMutableArray" id="0b1-Nh-a4m"/>
+                        <outletCollection property="playerLabels" destination="yet-cP-Akt" collectionClass="NSMutableArray" id="KbC-eV-rhn"/>
+                        <outletCollection property="scoreLabels" destination="CZo-5m-VGs" collectionClass="NSMutableArray" id="sTZ-Q4-fMO"/>
+                        <outletCollection property="scoreLabels" destination="JbE-Zd-rj8" collectionClass="NSMutableArray" id="u6E-2E-sKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

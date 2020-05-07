@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet var colorButtons: [CircularButton]!
     @IBOutlet weak var actionButton: UIButton!
     
+    @IBOutlet var playerLabels: [UILabel]!
+    @IBOutlet var scoreLabels: [UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
