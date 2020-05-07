@@ -74,11 +74,11 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gts-RK-vYJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="161.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-mg-c2L">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-mg-c2L" customClass="CircularButton" customModule="SimonSays2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="161.5" height="161.5"/>
                                                         <color key="backgroundColor" red="0.94901960780000005" green="0.31372549020000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-kW-J1A">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-kW-J1A" customClass="CircularButton" customModule="SimonSays2" customModuleProvider="target">
                                                         <rect key="frame" x="169.5" y="0.0" width="161.5" height="161.5"/>
                                                         <color key="backgroundColor" red="0.49803921569999998" green="0.72941176470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </button>
@@ -87,11 +87,11 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7Ju-xF-s8X">
                                                 <rect key="frame" x="0.0" y="169.5" width="331" height="161.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-MZ-LlB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-MZ-LlB" customClass="CircularButton" customModule="SimonSays2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="161.5" height="161.5"/>
                                                         <color key="backgroundColor" red="0.0" green="0.64313725489999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84u-FT-ZFj">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84u-FT-ZFj" customClass="CircularButton" customModule="SimonSays2" customModuleProvider="target">
                                                         <rect key="frame" x="169.5" y="0.0" width="161.5" height="161.5"/>
                                                         <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </button>
@@ -146,6 +146,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GHY-zV-m8M"/>
                     </view>
+                    <connections>
+                        <outlet property="actionButton" destination="fv1-Pc-BAD" id="701-cc-EYy"/>
+                        <outletCollection property="colorButtons" destination="ec0-mg-c2L" collectionClass="NSMutableArray" id="zso-vG-5Ia"/>
+                        <outletCollection property="colorButtons" destination="HQX-MZ-LlB" collectionClass="NSMutableArray" id="Y2k-za-W9o"/>
+                        <outletCollection property="colorButtons" destination="6WL-kW-J1A" collectionClass="NSMutableArray" id="ESo-hF-w2C"/>
+                        <outletCollection property="colorButtons" destination="84u-FT-ZFj" collectionClass="NSMutableArray" id="UYX-t4-tqx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
