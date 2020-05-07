@@ -21,7 +21,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
+    @IBAction func colorButtonHandler(_ sender: CircularButton) {
+    }
+    
+    @IBAction func actionButtonHandler(_ sender: UIButton) {
+    }
+    
 }
 
