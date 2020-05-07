@@ -30,6 +30,13 @@ class ViewController: UIViewController {
         }
     }
     
+    func createNewGame(){
+        actionButton.setTitle("Start Game", for: .normal)
+        for button in colorButtons {
+            button.alpha = 0.5
+        }
+    }
+    
     
     @IBAction func colorButtonHandler(_ sender: CircularButton) {
         print("Button \(sender.tag) tapped")
