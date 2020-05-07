@@ -19,14 +19,24 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        colorButtons = colorButtons.sorted(){
+            $0.tag < $1.tag
+        }
+        playerLabels = playerLabels.sorted(){
+            $0.tag < $1.tag
+        }
+        scoreLabels = scoreLabels.sorted(){
+            $0.tag < $1.tag
+        }
     }
     
     
     @IBAction func colorButtonHandler(_ sender: CircularButton) {
+        print("Button \(sender.tag) tapped")
     }
     
     @IBAction func actionButtonHandler(_ sender: UIButton) {
+        print("Action Button")
     }
     
 }
