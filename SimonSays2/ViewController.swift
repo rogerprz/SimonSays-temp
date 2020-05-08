@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     var colorSequence = [Int]()
     var colorsToTap = [Int]()
     
+    var gameEnded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorButtons = colorButtons.sorted() {
@@ -46,6 +48,25 @@ class ViewController: UIViewController {
             button.alpha = 0.5
             button.isEnabled = false
         }
+        
+        currentPlayer = 0
+        scores = [0,0]
+        playerLabels[currentPlayer].alpha = 1.0
+        playerLabels[1].alpha = 0.75
+        updateScoreLabels()
+    }
+    
+    func updateScoreLabels() {
+        for (index, label) in scoreLabels.enumerated(){
+            label.text = "\(scores[index])"
+        
+        }
+    }
+    
+    func switchPlayers() {
+        playerLabels[currentPlayer].alpha = 0.75
+        currentPlayer = currentPlayer == 0 ? 1 : 0
+        playerLabels[currentPlayer].alpha = 1.0
     }
     
     func addNewColor() {
@@ -75,6 +96,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     @IBAction func colorButtonHandler(_ sender: CircularButton) {
         if sender.tag == colorsToTap.removeFirst(){
             
@@ -88,6 +110,9 @@ class ViewController: UIViewController {
             for button in colorButtons {
                 button.isEnabled = false
             }
+            scores[currentPlayer] += 1
+            updateScoreLabels()
+            switchPlayers()
             actionButton.setTitle("Continue", for: .normal)
             actionButton.isEnabled = true
         }
