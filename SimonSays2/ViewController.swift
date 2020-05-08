@@ -66,6 +66,10 @@ class ViewController: UIViewController {
         actionButton.setTitle("Memorize", for: .normal)
         actionButton.isEnabled = false
         view.isUserInteractionEnabled = false
+        addNewColor()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
+            self.playSequence()
+        }
     }
     
 }
