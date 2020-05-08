@@ -38,6 +38,13 @@ class ViewController: UIViewController {
         }
         createNewGame()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if gameEnded {
+            gameEnded = false
+            createNewGame()
+        }
+    }
 
     func createNewGame() {
         colorSequence.removeAll()
@@ -96,6 +103,11 @@ class ViewController: UIViewController {
         }
     }
     
+    func endGame() {
+        let message = currentPlayer == 0 ? "Player 2 Wins!" : "Player 1 Wins!"
+        actionButton.setTitle(message, for: .normal)
+        gameEnded = true
+    }
     
     @IBAction func colorButtonHandler(_ sender: CircularButton) {
         if sender.tag == colorsToTap.removeFirst(){
@@ -104,6 +116,7 @@ class ViewController: UIViewController {
             for button in colorButtons {
                 button.isEnabled = false
             }
+            endGame()
             return
         }
         if colorsToTap.isEmpty {
