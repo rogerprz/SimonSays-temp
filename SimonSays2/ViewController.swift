@@ -25,18 +25,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorButtons = colorButtons.sorted(){
+        colorButtons = colorButtons.sorted() {
             $0.tag < $1.tag
         }
-        playerLabels = playerLabels.sorted(){
+        playerLabels = playerLabels.sorted() {
             $0.tag < $1.tag
         }
-        scoreLabels = scoreLabels.sorted(){
+        scoreLabels = scoreLabels.sorted() {
             $0.tag < $1.tag
         }
+        createNewGame()
     }
-    
-    func createNewGame(){
+
+    func createNewGame() {
         colorSequence.removeAll()
         
         actionButton.setTitle("Start Game", for: .normal)
@@ -47,14 +48,32 @@ class ViewController: UIViewController {
         }
     }
     
-    func addNewColor(){
-        
+    func addNewColor() {
+        colorSequence.append(Int(arc4random_uniform(UInt32(4))))
     }
     
-    func playSequence(){
-        
+    func playSequence() {
+        if sequenceIndex < colorSequence.count {
+            flash(button: colorButtons[colorSequence[sequenceIndex]])
+            sequenceIndex += 1
+        } else {
+            colorsToTap = colorSequence
+            view.isUserInteractionEnabled = true
+            actionButton.setTitle("Tap the Circles", for: .normal)
+            for button in colorButtons {
+                button.isEnabled = true
+            }
+        }
     }
     
+    func flash(button: CircularButton) {
+        UIView.animate(withDuration: 0.5, animations: {
+            button.alpha = 1.0
+            button.alpha = 0.5
+        }) { (bool) in
+            self.playSequence()
+        }
+    }
     
     @IBAction func colorButtonHandler(_ sender: CircularButton) {
         print("Button \(sender.tag) tapped")
@@ -67,7 +86,7 @@ class ViewController: UIViewController {
         actionButton.isEnabled = false
         view.isUserInteractionEnabled = false
         addNewColor()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             self.playSequence()
         }
     }
